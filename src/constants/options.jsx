@@ -18,14 +18,14 @@ export const SelectTravelsList=[
         title:'Family',
         desc:'A group of fun loving adv',
         icon:'👨‍👩‍👧‍👦',
-        people:'3-5 People'
+        people:'3 to 5 People'
     },
     {
         id:4,
         title:'Friends',
         desc:'A bunch of thrill-seekers',
         icon:'😎',
-        people:'5 - 10 People'
+        people:'5 to 10 People'
     }
 
 ]
@@ -41,14 +41,14 @@ export const SelectBudgetOptions=[
     {
         id:2,
         title:'Moderate',
-        desc:'Keep it balanced',
+        desc:'Keep cost on the average side',
         icon:'💰',
         budget:'$$'
     },
     {
         id:3,
         title:'Luxury',
-        desc:'I am looking for luxury and comfort',
+        desc:'Dont worry about cost',
         icon:'💸',
         budget:'$$$'
     }

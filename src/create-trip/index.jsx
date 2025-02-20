@@ -1,7 +1,7 @@
 import { AI_PROMPT, SelectBudgetOptions, SelectTravelsList } from '@/constants/options';
 import { Input } from '../components/ui/input'
 import { Button } from '../components/ui/button'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, use } from 'react'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 import { toast } from 'sonner';
 import { chatSession } from '@/service/AIModal';
@@ -19,6 +19,7 @@ import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { doc, setDoc } from "firebase/firestore";
 import { db } from '@/service/firebaseConfig';
+import { useNavigate } from 'react-router';
 
 
 
@@ -27,6 +28,7 @@ function CreateTrip() {
     const [formData, setFormData] = useState([]);
     const [openDialog, setOpenDialog] = useState(false);
     const [loading, setLoading] = useState(false);
+    const navigate=useNavigate();
 
     const handleInputChange = (name, value) => {
 
@@ -84,6 +86,9 @@ function CreateTrip() {
             id: docId
         });
         setLoading(false);
+        navigate('/view-trip/'+docId)
+
+
     }
 
     const GetUserProfile = (tokenInfo) => {
@@ -192,8 +197,6 @@ function CreateTrip() {
                     </DialogHeader>
                 </DialogContent>
             </Dialog>
-
-
         </div>
 
     )
